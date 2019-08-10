@@ -1,7 +1,23 @@
 /** Class that determines whether or not a year is a leap year.
- *  @author YOUR NAME HERE
+ *  @author Fengkai Bao
  */
 public class LeapYear {
+    /** Check if the year is either 
+     *  divisble by 400 or 
+     *  divisble by 4 and not by 100
+    */
+    public static boolean isLeapYear(int year){
+        if (year % 400 == 0) {
+            return true;
+        }
+        else if ((year % 4) == 0 && (year % 100) != 0) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
