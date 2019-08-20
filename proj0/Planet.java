@@ -6,8 +6,6 @@ public class Planet{
 	public double mass;
 	public String imgFileName;
 
-	static final double g = 6.67e-11;
-
 	public Planet(double xP, double yP, double xV, 
 				double yV, double m, String img){
 		this.xxPos = xP;
@@ -32,6 +30,7 @@ public class Planet{
 	}
 
 	public double calcForceExertedBy(Planet p){
+		double g = 6.67e-11;
 		return g*(this.mass)*(p.mass)/(this.calcDistance(p)*this.calcDistance(p));
 	}
 	
@@ -79,10 +78,8 @@ public class Planet{
 	/**
 	*  Draw one body
 	*/
-	public String imagePath = "images/";
-
 
 	public void draw(){
-		StdDraw.picture(this.xxPos, this.yyPos, imagePath+this.imgFileName);
+		StdDraw.picture(this.xxPos, this.yyPos, "images/"+this.imgFileName);
 	}
 }
