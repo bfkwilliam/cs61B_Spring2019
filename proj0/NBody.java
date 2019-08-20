@@ -8,7 +8,7 @@ public class NBody{
 		return radiusofUniverse;
 	}
 	/** Read input file name, Then return an array of Planet*/
-	public static Planet[] readPlanet(String fileName){
+	public static Planet[] readPlanets(String fileName){
 		In in = new In(fileName);
 		int numofPlanets = in.readInt();
 		double radiusofUniverse = in.readDouble();
@@ -38,7 +38,7 @@ public class NBody{
 		dt = Double.parseDouble(args[1]);
 		filename = args[2];
 		double radius = NBody.readRadius(filename);
-		Planet[] bodies = NBody.readPlanet(filename);
+		Planet[] bodies = NBody.readPlanets(filename);
 		/** Create xForce yForce Array*/
 		double[] xForce = new double[bodies.length];
 		double[] yForce = new double[bodies.length];
